@@ -1,0 +1,2810 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#073b5c">
+<title>Maa Vashno Clinic & Hospital</title>
+
+<style>
+:root{
+--navy:#073b5c;
+--navy2:#0b547a;
+--teal:#10a6a6;
+--mint:#eaf8f7;
+--ink:#102b3b;
+--muted:#617483;
+--bg:#f5f8fa;
+--card:#fff;
+--line:#dfe8ed;
+--shadow:0 18px 50px rgba(8,47,68,.10);
+--r:22px
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+color:var(--ink);
+background:var(--bg);
+line-height:1.55
+}
+
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+
+.wrap{
+max-width:1160px;
+margin:auto;
+padding:0 22px
+}
+
+.top{
+background:var(--navy);
+color:#fff;
+font-size:13px
+}
+
+.top .wrap{
+display:flex;
+justify-content:space-between;
+gap:14px;
+padding:9px 22px
+}
+
+.top a{
+color:#fff;
+text-decoration:none
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(255,255,255,.94);
+backdrop-filter:blur(16px);
+border-bottom:1px solid var(--line)
+}
+
+.navin{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:var(--ink)
+}
+
+.logo{
+width:44px;
+height:44px;
+border-radius:14px;
+background:linear-gradient(145deg,var(--teal),var(--navy));
+display:grid;
+place-items:center;
+color:white;
+font-weight:900;
+font-size:18px;
+box-shadow:0 8px 20px #0b547a33
+}
+
+.brand b{font-size:15px}
+.brand span{
+display:block;
+color:var(--muted);
+font-size:11px
+}
+
+.links{
+display:flex;
+align-items:center;
+gap:24px
+}
+
+.links a{
+color:var(--ink);
+text-decoration:none;
+font-size:14px;
+font-weight:700
+}
+
+.btn{
+border:0;
+border-radius:12px;
+padding:11px 16px;
+font-weight:800;
+transition:.2s
+}
+
+.btn:hover{transform:translateY(-1px)}
+
+.primary{
+background:var(--navy);
+color:#fff
+}
+
+.teal{
+background:var(--teal);
+color:#fff
+}
+
+.ghost{
+background:#fff;
+color:var(--navy);
+border:1px solid var(--line)
+}
+
+.danger{
+background:#fff0f0;
+color:#a62020;
+border:1px solid #ffd2d2
+}
+
+.small{
+padding:8px 11px;
+font-size:12px
+}
+
+.hero{
+padding:76px 0 46px;
+background:
+radial-gradient(circle at 85% 15%,#19b7b733,transparent 30%),
+linear-gradient(135deg,#062f4a,#0b5276 65%,#0a8e94);
+color:#fff;
+overflow:hidden
+}
+
+.heroGrid{
+display:grid;
+grid-template-columns:1.25fr .75fr;
+gap:42px;
+align-items:center
+}
+
+.eyebrow{
+display:inline-flex;
+gap:8px;
+align-items:center;
+padding:7px 11px;
+border:1px solid #ffffff33;
+background:#ffffff10;
+border-radius:999px;
+font-size:12px;
+font-weight:800
+}
+
+.hero h1{
+font-size:clamp(36px,5vw,64px);
+line-height:1.02;
+margin:18px 0;
+letter-spacing:-2px
+}
+
+.hero p{
+max-width:680px;
+color:#dcecf5;
+font-size:17px
+}
+
+.actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:26px
+}
+
+.hero .ghost{
+background:#ffffff12;
+border-color:#ffffff3d;
+color:#fff
+}
+
+.infoCard{
+background:#ffffff12;
+border:1px solid #ffffff22;
+border-radius:24px;
+padding:22px;
+box-shadow:0 25px 60px #001c2e33
+}
+
+.infoCard .row{
+display:flex;
+justify-content:space-between;
+padding:13px 0;
+border-bottom:1px solid #ffffff1f
+}
+
+.infoCard .row:last-child{border:0}
+
+.infoCard small{color:#bcd5e3}
+.infoCard b{font-size:14px}
+
+section{padding:72px 0}
+
+.sectionHead{
+display:flex;
+justify-content:space-between;
+gap:20px;
+align-items:end;
+margin-bottom:26px
+}
+
+.kicker{
+color:var(--teal);
+font-size:12px;
+font-weight:900;
+letter-spacing:1.3px;
+text-transform:uppercase
+}
+
+.sectionHead h2{
+margin:5px 0 0;
+font-size:32px;
+letter-spacing:-1px
+}
+
+.muted{color:var(--muted)}
+
+.stats{
+background:#fff;
+border-bottom:1px solid var(--line)
+}
+
+.statsGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr)
+}
+
+.stat{
+padding:23px;
+border-right:1px solid var(--line)
+}
+
+.stat:last-child{border:0}
+
+.stat b{font-size:25px}
+
+.stat span{
+display:block;
+color:var(--muted);
+font-size:12px;
+margin-top:3px
+}
+
+.grid4{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px
+}
+
+.grid3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
+}
+
+.grid2{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:22px
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:var(--r);
+padding:22px;
+box-shadow:var(--shadow)
+}
+
+.icon{
+width:44px;
+height:44px;
+border-radius:14px;
+background:var(--mint);
+display:grid;
+place-items:center;
+color:var(--teal);
+font-weight:900
+}
+
+.service h3,.card h3{margin:13px 0 5px}
+
+.service p{
+margin:0;
+color:var(--muted);
+font-size:13px
+}
+
+.doctor{
+display:grid;
+grid-template-columns:92px 1fr;
+gap:18px;
+align-items:center
+}
+
+.docphoto{
+width:92px;
+height:92px;
+border-radius:24px;
+object-fit:cover;
+background:linear-gradient(145deg,#0a7c94,#0c3d60);
+display:grid;
+place-items:center;
+color:white;
+font-size:28px;
+font-weight:900
+}
+
+.doctor .tag{
+display:inline-block;
+background:var(--mint);
+color:#087b7c;
+padding:4px 8px;
+border-radius:999px;
+font-size:10px;
+font-weight:800
+}
+
+.doctor h3{margin:6px 0 2px}
+
+.doctor p{
+margin:2px 0;
+color:var(--muted);
+font-size:12px
+}
+
+.updates{display:grid;gap:12px}
+
+.update{
+padding:18px 20px;
+border:1px solid var(--line);
+border-radius:18px;
+background:#fff;
+display:flex;
+justify-content:space-between;
+gap:20px
+}
+
+.update h3{margin:0 0 4px}
+
+.update p{
+margin:0;
+color:var(--muted);
+font-size:13px
+}
+
+.date{
+font-size:11px;
+color:var(--teal);
+font-weight:800;
+white-space:nowrap
+}
+
+.mapbox{
+min-height:330px;
+border-radius:28px;
+background:linear-gradient(145deg,#dff4f1,#e8f0f5);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:35px
+}
+
+.mapinner{max-width:520px}
+.mappin{font-size:45px}
+
+.contact{
+background:var(--navy);
+color:#fff
+}
+
+.contact .muted{color:#bcd1de}
+
+.contactGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px
+}
+
+.contactCard{
+background:#ffffff0d;
+border:1px solid #ffffff18;
+border-radius:22px;
+padding:25px
+}
+
+.contact a{color:#fff}
+
+.footer{
+background:#052b43;
+color:#a9c3d1;
+padding:28px 0;
+font-size:12px
+}
+
+.footer .wrap{
+display:flex;
+justify-content:space-between;
+gap:15px
+}
+
+.admin{
+display:none;
+background:#eef5f7;
+min-height:100vh
+}
+
+.admin.on{display:block}
+
+.adminbar{
+background:var(--navy);
+color:#fff;
+padding:18px 0
+}
+
+.adminbar .wrap{
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.adminGrid{
+display:grid;
+grid-template-columns:260px 1fr;
+gap:22px;
+padding:26px 22px
+}
+
+.side{
+background:#fff;
+border:1px solid var(--line);
+border-radius:20px;
+padding:14px;
+height:max-content;
+position:sticky;
+top:92px
+}
+
+.side button{
+display:block;
+width:100%;
+text-align:left;
+background:none;
+border:0;
+padding:12px;
+border-radius:10px;
+font-weight:750;
+color:var(--ink)
+}
+
+.side button.active,
+.side button:hover{
+background:var(--mint);
+color:#087b7c
+}
+
+.panel{
+background:#fff;
+border:1px solid var(--line);
+border-radius:20px;
+padding:24px
+}
+
+.panel h2{margin-top:0}
+
+.formgrid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px
+}
+
+.field{
+display:grid;
+gap:6px
+}
+
+.field.full{grid-column:1/-1}
+
+.field label{
+font-size:12px;
+font-weight:800
+}
+
+.field input,
+.field textarea,
+.field select{
+width:100%;
+border:1px solid #d5e0e5;
+border-radius:11px;
+padding:11px 12px;
+outline:none;
+background:#fff
+}
+
+.field input:focus,
+.field textarea:focus{
+border-color:var(--teal);
+box-shadow:0 0 0 3px #10a6a61a
+}
+
+.toolbar{
+display:flex;
+justify-content:space-between;
+gap:12px;
+align-items:center;
+margin-bottom:18px
+}
+
+.table{
+width:100%;
+border-collapse:collapse
+}
+
+.table th,
+.table td{
+text-align:left;
+padding:11px 8px;
+border-bottom:1px solid var(--line);
+font-size:12px;
+vertical-align:middle
+}
+
+.miniimg{
+width:42px;
+height:42px;
+border-radius:10px;
+object-fit:cover;
+background:#dceef0
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:#061f2dcc;
+z-index:100;
+align-items:center;
+justify-content:center;
+padding:20px
+}
+
+.modal.on{display:flex}
+
+.modalbox{
+background:#fff;
+border-radius:22px;
+max-width:680px;
+width:100%;
+max-height:90vh;
+overflow:auto;
+padding:24px
+}
+
+.toast{
+position:fixed;
+right:18px;
+bottom:18px;
+background:#092f48;
+color:#fff;
+padding:13px 16px;
+border-radius:13px;
+box-shadow:var(--shadow);
+display:none;
+z-index:200;
+font-size:13px
+}
+
+.toast.on{display:block}
+
+.public{display:block}
+.public.hide{display:none}
+
+.adminLogin{
+max-width:420px;
+margin:70px auto;
+background:#fff;
+padding:28px;
+border-radius:24px;
+border:1px solid var(--line);
+box-shadow:var(--shadow)
+}
+
+@media(max-width:900px){
+.heroGrid,
+.contactGrid,
+.adminGrid{grid-template-columns:1fr}
+
+.grid4{grid-template-columns:repeat(2,1fr)}
+.grid3{grid-template-columns:1fr 1fr}
+.links{display:none}
+.side{position:static}
+.statsGrid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:600px){
+.wrap{padding:0 16px}
+.hero{padding:52px 0 36px}
+.hero h1{font-size:42px}
+.grid4,.grid3,.grid2{grid-template-columns:1fr}
+section{padding:52px 0}
+.sectionHead{display:block}
+.formgrid{grid-template-columns:1fr}
+.field.full{grid-column:auto}
+.doctor{grid-template-columns:72px 1fr}
+.docphoto{
+width:72px;
+height:72px
+}
+}
+</style>
+</head>
+
+<body>
+
+<div id="publicApp" class="public"></div>
+<div id="adminApp" class="admin"></div>
+<div id="toast" class="toast"></div>
+
+<script>
+
+const KEY='mvhospital_v4';
+
+const DEFAULT={
+settings:{
+name:'Maa Vashno Clinic & Hospital',
+short:'Maa Vashno Clinic & Hospital',
+tagline:'Compassionate care. Modern facilities. Trusted locally.',
+address:'Prakash Nagar, Bhutiyatad, Sanik Chauraha, Ghazipur 233001',
+phone:'',
+email:'',
+hours:'Open 24 hours',
+description:'A clean, professional hospital information website for doctors, services, updates and contact information.'
+},
+
+doctors:[
+{
+id:'doctor-1',
+name:'MK YADAV',
+speciality:'General & GI Surgery',
+degrees:'MBBS (BHU) | MS (BHU) • FIAGES | FISCP | MCLS',
+fellowship:'Fellowship in Advanced GI Endoscopy & ERCP (FAGIE)',
+member:'Member of Society of GI Endoscopy of India.',
+photo:'',
+available:'By appointment'
+}
+],
+
+services:[
+{
+id:'service-1',
+title:'Doctor Consultation',
+text:'Doctor information, availability and appointment contact.'
+},
+{
+id:'service-2',
+title:'General Care',
+text:'Hospital information and patient-support details in one place.'
+},
+{
+id:'service-3',
+title:'Surgical Care',
+text:'Information about available surgical and specialist services.'
+},
+{
+id:'service-4',
+title:'Emergency Contact',
+text:'Quick access to hospital contact and location.'
+}
+],
+
+news:[
+{
+id:'news-1',
+title:'Hospital updates',
+text:'New announcements and important hospital information can be posted here.',
+date:'2026-09-23'
+}
+],
+
+ads:[
+{
+id:'ad-1',
+title:'Maa Vashno Clinic & Hospital',
+text:'Trusted local healthcare information and doctor updates.',
+image:''
+}
+],
+
+adminPin:'mvc9695'
+};
+
+let db=load();
+
+function load(){
+try{
+const x=JSON.parse(localStorage.getItem(KEY));
+
+if(x){
+return merge(DEFAULT,x);
+}
+
+return structuredClone(DEFAULT);
+
+}catch(e){
+return structuredClone(DEFAULT);
+}
+}
+
+function merge(a,b){
+return {
+...a,
+...b,
+settings:{
+...a.settings,
+...(b.settings||{})
+}
+};
+}
+
+function save(){
+localStorage.setItem(KEY,JSON.stringify(db));
+}
+
+function toast(t){
+const el=document.getElementById('toast');
+
+el.textContent=t;
+el.classList.add('on');
+
+setTimeout(()=>{
+el.classList.remove('on');
+},2200);
+}
+
+function esc(s=''){
+return String(s).replace(/[&<>"']/g,m=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[m]));
+}
+
+function initials(n='MV'){
+return n
+.split(/\s+/)
+.map(x=>x[0])
+.slice(0,2)
+.join('')
+.toUpperCase();
+}
+
+function maps(){
+
+const q=encodeURIComponent(db.settings.address);
+
+window.open(
+'https://www.google.com/maps/search/?api=1&query='+q,
+'_blank'
+);
+
+}
+
+function call(){
+
+if(db.settings.phone){
+
+location.href='tel:'+db.settings.phone;
+
+}else{
+
+toast('Add hospital phone number from Admin.');
+
+}
+
+}
+
+function whatsapp(){
+
+if(db.settings.phone){
+
+window.open(
+'https://wa.me/'+db.settings.phone.replace(/\D/g,''),
+'_blank'
+);
+
+}else{
+
+toast('Add hospital phone number from Admin.');
+
+}
+
+}
+
+function renderPublic(){
+
+const s=db.settings;
+
+document.getElementById('publicApp').innerHTML=`
+
+<div class="top">
+
+<div class="wrap">
+
+<span>${esc(s.address)}</span>
+
+<span>
+${esc(s.hours)}
+ ·
+<a href="javascript:call()">Call hospital</a>
+</span>
+
+</div>
+
+</div>
+
+<nav>
+
+<div class="wrap navin">
+
+<a class="brand" href="#">
+
+<div class="logo">MV</div>
+
+<div>
+
+<b>${esc(s.short)}</b>
+
+<span>Healthcare information portal</span>
+
+</div>
+
+</a>
+
+<div class="links">
+
+<a href="#doctors">Doctors</a>
+<a href="#services">Services</a>
+<a href="#updates">Updates</a>
+<a href="#location">Location</a>
+
+<button
+class="btn primary small"
+onclick="showAdmin()">
+Admin
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+<header class="hero">
+
+<div class="wrap heroGrid">
+
+<div>
+
+<span class="eyebrow">
+● ${esc(s.hours)}
+</span>
+
+<h1>${esc(s.name)}</h1>
+
+<p>${esc(s.tagline)}</p>
+
+<div class="actions">
+
+<button
+class="btn teal"
+onclick="document.querySelector('#doctors').scrollIntoView()">
+Meet our doctors
+</button>
+
+<button
+class="btn ghost"
+onclick="maps()">
+Get directions
+</button>
+
+</div>
+
+</div>
+
+<div class="infoCard">
+
+<div class="row">
+<small>Location</small>
+<b>Ghazipur</b>
+</div>
+
+<div class="row">
+<small>Address</small>
+<b>${esc(s.address)}</b>
+</div>
+
+<div class="row">
+<small>Contact</small>
+<b>${esc(s.phone||'Add phone in Admin')}</b>
+</div>
+
+<div class="row">
+<small>Appointments</small>
+<b>Contact hospital</b>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="stats">
+
+<div class="wrap statsGrid">
+
+<div class="stat">
+<b>${db.doctors.length}</b>
+<span>Doctors listed</span>
+</div>
+
+<div class="stat">
+<b>${db.services.length}</b>
+<span>Care services</span>
+</div>
+
+<div class="stat">
+<b>${db.news.length}</b>
+<span>Latest updates</span>
+</div>
+
+<div class="stat">
+<b>24/7</b>
+<span>Website access</span>
+</div>
+
+</div>
+
+</div>
+
+<section id="doctors">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div>
+
+<div class="kicker">Medical team</div>
+
+<h2>Meet our doctors</h2>
+
+<p class="muted">
+Doctor profiles are managed from the Admin panel.
+</p>
+
+</div>
+
+</div>
+
+<div class="grid2">
+
+${db.doctors.map(d=>`
+
+<article class="card doctor">
+
+<div class="docphoto">
+
+${
+d.photo
+?
+`<img
+src="${d.photo}"
+alt="${esc(d.name)}"
+style="width:100%;height:100%;object-fit:cover;border-radius:24px">`
+:
+initials(d.name)
+}
+
+</div>
+
+<div>
+
+<span class="tag">
+${esc(d.available||'Available')}
+</span>
+
+<h3>${esc(d.name)}</h3>
+
+<p>
+<b>${esc(d.speciality)}</b>
+</p>
+
+<p>${esc(d.degrees)}</p>
+
+<p>${esc(d.fellowship)}</p>
+
+<p>${esc(d.member)}</p>
+
+</div>
+
+</article>
+
+`).join('')}
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services" style="background:#fff">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div>
+
+<div class="kicker">Care & support</div>
+
+<h2>Hospital services</h2>
+
+</div>
+
+</div>
+
+<div class="grid4">
+
+${db.services.map((x,i)=>`
+
+<article class="card service">
+
+<div class="icon">
+${['✚','♡','＋','☎'][i%4]}
+</div>
+
+<h3>${esc(x.title)}</h3>
+
+<p>${esc(x.text)}</p>
+
+</article>
+
+`).join('')}
+
+</div>
+
+</div>
+
+</section>
+
+<section id="updates">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div>
+
+<div class="kicker">News & announcements</div>
+
+<h2>Latest updates</h2>
+
+</div>
+
+</div>
+
+<div class="updates">
+
+${db.news.map(n=>`
+
+<article class="update">
+
+<div>
+
+<h3>${esc(n.title)}</h3>
+
+<p>${esc(n.text)}</p>
+
+</div>
+
+<span class="date">
+${esc(n.date)}
+</span>
+
+</article>
+
+`).join('')}
+
+</div>
+
+</div>
+
+</section>
+
+<section style="background:#fff">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div>
+
+<div class="kicker">Hospital ads</div>
+
+<h2>Featured information</h2>
+
+</div>
+
+</div>
+
+<div class="grid3">
+
+${db.ads.map(a=>`
+
+<article class="card">
+
+${
+a.image
+?
+`<img
+src="${a.image}"
+style="width:100%;height:170px;object-fit:cover;border-radius:16px;margin-bottom:12px">`
+:''
+}
+
+<h3>${esc(a.title)}</h3>
+
+<p class="muted">${esc(a.text)}</p>
+
+</article>
+
+`).join('')}
+
+</div>
+
+</div>
+
+</section>
+
+<section id="location">
+
+<div class="wrap">
+
+<div class="sectionHead">
+
+<div>
+
+<div class="kicker">Find us</div>
+
+<h2>Hospital location</h2>
+
+<p class="muted">${esc(s.address)}</p>
+
+</div>
+
+<button
+class="btn primary"
+onclick="maps()">
+Open Google Maps
+</button>
+
+</div>
+
+<div class="mapbox">
+
+<div class="mapinner">
+
+<div class="mappin">⌖</div>
+
+<h3>${esc(s.short)}</h3>
+
+<p class="muted">${esc(s.address)}</p>
+
+<button
+class="btn teal"
+onclick="maps()">
+Get directions
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<div class="wrap contactGrid">
+
+<div>
+
+<div class="kicker">Contact</div>
+
+<h2>Need hospital information?</h2>
+
+<p class="muted">
+${esc(s.description)}
+</p>
+
+<div class="actions">
+
+<button
+class="btn teal"
+onclick="call()">
+Call
+</button>
+
+<button
+class="btn ghost"
+onclick="whatsapp()">
+WhatsApp
+</button>
+
+</div>
+
+</div>
+
+<div class="contactCard">
+
+<h3>${esc(s.short)}</h3>
+
+<p class="muted">${esc(s.address)}</p>
+
+<p>
+Phone:
+${esc(s.phone||'Not added')}
+</p>
+
+<p>
+Email:
+${esc(s.email||'Not added')}
+</p>
+
+<p>${esc(s.hours)}</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="wrap">
+
+<span>
+© ${new Date().getFullYear()}
+${esc(s.short)}
+</span>
+
+<span>
+Website managed through Admin
+</span>
+
+</div>
+
+</footer>
+
+`;
+
+}
+
+function showAdmin(){
+
+document.getElementById('publicApp')
+.classList.add('hide');
+
+document.getElementById('adminApp')
+.classList.add('on');
+
+renderAdminLogin();
+
+}
+
+function exitAdmin(){
+
+document.getElementById('adminApp')
+.classList.remove('on');
+
+document.getElementById('publicApp')
+.classList.remove('hide');
+
+renderPublic();
+
+window.scrollTo(0,0);
+
+}
+
+function renderAdminLogin(){
+
+document.getElementById('adminApp').innerHTML=`
+
+<div class="adminbar">
+
+<div class="wrap">
+
+<b>Hospital Admin</b>
+
+<button
+class="btn ghost small"
+onclick="exitAdmin()">
+View website
+</button>
+
+</div>
+
+</div>
+
+<div class="adminLogin">
+
+<div class="kicker">
+Secure admin dashboard
+</div>
+
+<h2>Admin login</h2>
+
+<p class="muted">
+Enter your hospital admin PIN.
+</p>
+
+<div class="field">
+
+<label>ADMIN PIN</label>
+
+<input
+id="pin"
+type="password"
+inputmode="text"
+autocomplete="off">
+
+</div>
+
+<br>
+
+<button
+class="btn primary"
+style="width:100%"
+onclick="login()">
+Open dashboard
+</button>
+
+</div>
+
+`;
+
+}
+
+function login(){
+
+if(document.getElementById('pin').value===db.adminPin){
+
+renderDashboard();
+
+}else{
+
+toast('Incorrect PIN');
+
+}
+function renderDashboard(){
+
+document.getElementById('adminApp').innerHTML=`
+
+<div class="adminbar">
+<div class="wrap">
+<b>${esc(db.settings.short)} — Admin</b>
+<button class="btn ghost small" onclick="exitAdmin()">View website</button>
+</div>
+</div>
+
+<div class="adminGrid">
+
+<aside class="side">
+
+<button class="active" onclick="adminPage('overview',this)">Dashboard</button>
+<button onclick="adminPage('doctors',this)">Doctors</button>
+<button onclick="adminPage('services',this)">Services</button>
+<button onclick="adminPage('news',this)">News</button>
+<button onclick="adminPage('ads',this)">Advertisements</button>
+<button onclick="adminPage('settings',this)">Hospital Details</button>
+<button onclick="adminPage('backup',this)">Backup & Restore</button>
+
+<hr>
+
+<button onclick="exitAdmin()">← Exit Admin</button>
+
+</aside>
+
+<main id="adminContent"></main>
+
+</div>
+
+`;
+
+adminPage('overview');
+
+}
+
+function adminPage(page,btn){
+
+document.querySelectorAll('.side button')
+.forEach(x=>x.classList.remove('active'));
+
+if(btn)btn.classList.add('active');
+
+const c=document.getElementById('adminContent');
+
+if(page==='overview'){
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="kicker">Control centre</div>
+
+<h2>Hospital Dashboard</h2>
+
+<p class="muted">
+Manage the public hospital website from this panel.
+</p>
+
+<div class="grid4">
+
+<div class="card">
+<div class="icon">D</div>
+<h3>${db.doctors.length}</h3>
+<p class="muted">Doctors</p>
+</div>
+
+<div class="card">
+<div class="icon">S</div>
+<h3>${db.services.length}</h3>
+<p class="muted">Services</p>
+</div>
+
+<div class="card">
+<div class="icon">N</div>
+<h3>${db.news.length}</h3>
+<p class="muted">News posts</p>
+</div>
+
+<div class="card">
+<div class="icon">A</div>
+<h3>${db.ads.length}</h3>
+<p class="muted">Advertisements</p>
+</div>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>Quick actions</h3>
+
+<div class="actions">
+
+<button class="btn primary"
+onclick="adminPage('doctors')">
++ Add Doctor
+</button>
+
+<button class="btn teal"
+onclick="adminPage('news')">
++ Add News
+</button>
+
+<button class="btn ghost"
+onclick="adminPage('ads')">
++ Add Advertisement
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+return;
+
+}
+
+if(page==='doctors'){
+
+renderDoctorsAdmin(c);
+return;
+
+}
+
+if(page==='services'){
+
+renderServicesAdmin(c);
+return;
+
+}
+
+if(page==='news'){
+
+renderNewsAdmin(c);
+return;
+
+}
+
+if(page==='ads'){
+
+renderAdsAdmin(c);
+return;
+
+}
+
+if(page==='settings'){
+
+renderSettingsAdmin(c);
+return;
+
+}
+
+if(page==='backup'){
+
+renderBackupAdmin(c);
+return;
+
+}
+
+}
+
+
+/* =========================
+DOCTORS
+========================= */
+
+function renderDoctorsAdmin(c){
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="toolbar">
+
+<div>
+<div class="kicker">Medical team</div>
+<h2>Doctors</h2>
+</div>
+
+<button class="btn primary"
+onclick="doctorModal()">
++ Add Doctor
+</button>
+
+</div>
+
+<table class="table">
+
+<thead>
+<tr>
+<th>Photo</th>
+<th>Name</th>
+<th>Speciality</th>
+<th>Availability</th>
+<th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+
+${db.doctors.map(d=>`
+
+<tr>
+
+<td>
+
+${
+d.photo
+?
+`<img class="miniimg" src="${d.photo}">`
+:
+`<div class="miniimg"
+style="display:grid;place-items:center;font-weight:900">
+${initials(d.name)}
+</div>`
+}
+
+</td>
+
+<td><b>${esc(d.name)}</b></td>
+
+<td>${esc(d.speciality)}</td>
+
+<td>${esc(d.available||'')}</td>
+
+<td>
+
+<button class="btn ghost small"
+onclick="doctorModal('${d.id}')">
+Edit
+</button>
+
+<button class="btn danger small"
+onclick="deleteDoctor('${d.id}')">
+Delete
+</button>
+
+</td>
+
+</tr>
+
+`).join('')}
+
+</tbody>
+
+</table>
+
+</div>
+
+`;
+
+}
+
+function doctorModal(id=''){
+
+const d=db.doctors.find(x=>x.id===id)||{
+name:'',
+speciality:'',
+degrees:'',
+fellowship:'',
+member:'',
+available:'By appointment',
+photo:''
+};
+
+document.body.insertAdjacentHTML('beforeend',`
+
+<div class="modal on" id="doctorModal">
+
+<div class="modalbox">
+
+<div class="toolbar">
+
+<h2>${id?'Edit Doctor':'Add Doctor'}</h2>
+
+<button class="btn ghost small"
+onclick="closeModal('doctorModal')">
+✕
+</button>
+
+</div>
+
+<div class="formgrid">
+
+<div class="field">
+
+<label>Doctor Name</label>
+
+<input id="dName" value="${esc(d.name)}">
+
+</div>
+
+<div class="field">
+
+<label>Speciality</label>
+
+<input id="dSpeciality"
+value="${esc(d.speciality)}">
+
+</div>
+
+<div class="field full">
+
+<label>Degrees</label>
+
+<input id="dDegrees"
+value="${esc(d.degrees)}">
+
+</div>
+
+<div class="field full">
+
+<label>Fellowship</label>
+
+<input id="dFellowship"
+value="${esc(d.fellowship)}">
+
+</div>
+
+<div class="field full">
+
+<label>Membership</label>
+
+<input id="dMember"
+value="${esc(d.member)}">
+
+</div>
+
+<div class="field">
+
+<label>Availability</label>
+
+<input id="dAvailable"
+value="${esc(d.available)}">
+
+</div>
+
+<div class="field">
+
+<label>Doctor Photo</label>
+
+<input id="dPhoto"
+type="file"
+accept="image/*"
+onchange="previewImage(this,'doctorPreview')">
+
+</div>
+
+<div class="field full">
+
+${
+d.photo
+?
+`<img id="doctorPreview"
+src="${d.photo}"
+style="width:110px;height:110px;object-fit:cover;border-radius:18px">`
+:
+`<div id="doctorPreview"
+style="width:110px;height:110px;border-radius:18px;background:#e8f3f5;display:grid;place-items:center;font-weight:900">
+Photo
+</div>`
+}
+
+</div>
+
+</div>
+
+<br>
+
+<button class="btn primary"
+onclick="saveDoctor('${id}')">
+Save Doctor
+</button>
+
+</div>
+
+</div>
+
+`);
+
+}
+
+async function saveDoctor(id){
+
+const saveIt=photo=>{
+
+const data={
+id:id||'doctor-'+Date.now(),
+name:document.getElementById('dName').value.trim(),
+speciality:document.getElementById('dSpeciality').value.trim(),
+degrees:document.getElementById('dDegrees').value.trim(),
+fellowship:document.getElementById('dFellowship').value.trim(),
+member:document.getElementById('dMember').value.trim(),
+available:document.getElementById('dAvailable').value.trim(),
+photo:photo||''
+};
+
+if(!data.name){
+
+toast('Doctor name is required');
+return;
+
+}
+
+if(id){
+
+const index=db.doctors.findIndex(x=>x.id===id);
+
+if(index>=0){
+
+db.doctors[index]={
+...db.doctors[index],
+...data,
+photo:photo||db.doctors[index].photo
+};
+
+}
+
+}else{
+
+db.doctors.push(data);
+
+}
+
+save();
+closeModal('doctorModal');
+renderDoctorsAdmin(document.getElementById('adminContent'));
+toast('Doctor saved');
+
+};
+
+const file=document.getElementById('dPhoto').files[0];
+
+if(file){
+
+readImage(file,saveIt);
+
+}else{
+
+const old=id?
+(db.doctors.find(x=>x.id===id)||{}).photo:'';
+
+saveIt(old);
+
+}
+
+}
+
+function deleteDoctor(id){
+
+if(!confirm('Delete this doctor?'))return;
+
+db.doctors=db.doctors.filter(x=>x.id!==id);
+
+save();
+
+renderDoctorsAdmin(document.getElementById('adminContent'));
+
+toast('Doctor deleted');
+
+}
+
+
+/* =========================
+SERVICES
+========================= */
+
+function renderServicesAdmin(c){
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="toolbar">
+
+<div>
+<div class="kicker">Hospital services</div>
+<h2>Services</h2>
+</div>
+
+<button class="btn primary"
+onclick="serviceModal()">
++ Add Service
+</button>
+
+</div>
+
+<div class="grid2">
+
+${db.services.map(s=>`
+
+<div class="card">
+
+<h3>${esc(s.title)}</h3>
+
+<p class="muted">${esc(s.text)}</p>
+
+<br>
+
+<button class="btn ghost small"
+onclick="serviceModal('${s.id}')">
+Edit
+</button>
+
+<button class="btn danger small"
+onclick="deleteService('${s.id}')">
+Delete
+</button>
+
+</div>
+
+`).join('')}
+
+</div>
+
+</div>
+
+`;
+
+}
+
+function serviceModal(id=''){
+
+const s=db.services.find(x=>x.id===id)||{
+title:'',
+text:''
+};
+
+document.body.insertAdjacentHTML('beforeend',`
+
+<div class="modal on" id="serviceModal">
+
+<div class="modalbox">
+
+<h2>${id?'Edit Service':'Add Service'}</h2>
+
+<div class="formgrid">
+
+<div class="field full">
+<label>Title</label>
+<input id="sTitle" value="${esc(s.title)}">
+</div>
+
+<div class="field full">
+<label>Description</label>
+<textarea id="sText" rows="5">${esc(s.text)}</textarea>
+</div>
+
+</div>
+
+<br>
+
+<button class="btn primary"
+onclick="saveService('${id}')">
+Save Service
+</button>
+
+<button class="btn ghost"
+onclick="closeModal('serviceModal')">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+`);
+
+}
+
+function saveService(id){
+
+const item={
+id:id||'service-'+Date.now(),
+title:document.getElementById('sTitle').value.trim(),
+text:document.getElementById('sText').value.trim()
+};
+
+if(!item.title){
+
+toast('Service title is required');
+return;
+
+}
+
+if(id){
+
+const i=db.services.findIndex(x=>x.id===id);
+
+db.services[i]=item;
+
+}else{
+
+db.services.push(item);
+
+}
+
+save();
+
+closeModal('serviceModal');
+
+renderServicesAdmin(document.getElementById('adminContent'));
+
+toast('Service saved');
+
+}
+
+function deleteService(id){
+
+if(!confirm('Delete this service?'))return;
+
+db.services=db.services.filter(x=>x.id!==id);
+
+save();
+
+renderServicesAdmin(document.getElementById('adminContent'));
+
+toast('Service deleted');
+
+}
+
+
+/* =========================
+NEWS
+========================= */
+
+function renderNewsAdmin(c){
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="toolbar">
+
+<div>
+<div class="kicker">Announcements</div>
+<h2>News & Updates</h2>
+</div>
+
+<button class="btn primary"
+onclick="newsModal()">
++ Add News
+</button>
+
+</div>
+
+<div class="updates">
+
+${db.news.map(n=>`
+
+<div class="update">
+
+<div>
+
+<h3>${esc(n.title)}</h3>
+
+<p>${esc(n.text)}</p>
+
+</div>
+
+<div>
+
+<div class="date">${esc(n.date)}</div>
+
+<br>
+
+<button class="btn ghost small"
+onclick="newsModal('${n.id}')">
+Edit
+</button>
+
+<button class="btn danger small"
+onclick="deleteNews('${n.id}')">
+Delete
+</button>
+
+</div>
+
+</div>
+
+`).join('')}
+
+</div>
+
+</div>
+
+`;
+
+}
+
+function newsModal(id=''){
+
+const n=db.news.find(x=>x.id===id)||{
+title:'',
+text:'',
+date:new Date().toISOString().slice(0,10)
+};
+
+document.body.insertAdjacentHTML('beforeend',`
+
+<div class="modal on" id="newsModal">
+
+<div class="modalbox">
+
+<h2>${id?'Edit News':'Add News'}</h2>
+
+<div class="formgrid">
+
+<div class="field full">
+<label>Title</label>
+<input id="nTitle" value="${esc(n.title)}">
+</div>
+
+<div class="field full">
+<label>News / Announcement</label>
+<textarea id="nText" rows="6">${esc(n.text)}</textarea>
+</div>
+
+<div class="field">
+<label>Date</label>
+<input id="nDate" type="date" value="${esc(n.date)}">
+</div>
+
+</div>
+
+<br>
+
+<button class="btn primary"
+onclick="saveNews('${id}')">
+Save News
+</button>
+
+<button class="btn ghost"
+onclick="closeModal('newsModal')">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+`);
+
+}
+
+function saveNews(id){
+
+const item={
+id:id||'news-'+Date.now(),
+title:document.getElementById('nTitle').value.trim(),
+text:document.getElementById('nText').value.trim(),
+date:document.getElementById('nDate').value
+};
+
+if(!item.title){
+
+toast('News title is required');
+return;
+
+}
+
+if(id){
+
+const i=db.news.findIndex(x=>x.id===id);
+
+db.news[i]=item;
+
+}else{
+
+db.news.unshift(item);
+
+}
+
+save();
+
+closeModal('newsModal');
+
+renderNewsAdmin(document.getElementById('adminContent'));
+
+toast('News saved');
+
+}
+
+function deleteNews(id){
+
+if(!confirm('Delete this news post?'))return;
+
+db.news=db.news.filter(x=>x.id!==id);
+
+save();
+
+renderNewsAdmin(document.getElementById('adminContent'));
+
+toast('News deleted');
+
+}
+
+
+/* =========================
+ADS
+========================= */
+
+function renderAdsAdmin(c){
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="toolbar">
+
+<div>
+<div class="kicker">Promotions</div>
+<h2>Advertisements</h2>
+</div>
+
+<button class="btn primary"
+onclick="adModal()">
++ Add Advertisement
+</button>
+
+</div>
+
+<div class="grid2">
+
+${db.ads.map(a=>`
+
+<div class="card">
+
+${
+a.image
+?
+`<img
+src="${a.image}"
+style="width:100%;height:150px;object-fit:cover;border-radius:15px">`
+:''
+}
+
+<h3>${esc(a.title)}</h3>
+
+<p class="muted">${esc(a.text)}</p>
+
+<button class="btn ghost small"
+onclick="adModal('${a.id}')">
+Edit
+</button>
+
+<button class="btn danger small"
+onclick="deleteAd('${a.id}')">
+Delete
+</button>
+
+</div>
+
+`).join('')}
+
+</div>
+
+</div>
+
+`;
+
+}
+
+function adModal(id=''){
+
+const a=db.ads.find(x=>x.id===id)||{
+title:'',
+text:'',
+image:''
+};
+
+document.body.insertAdjacentHTML('beforeend',`
+
+<div class="modal on" id="adModal">
+
+<div class="modalbox">
+
+<h2>${id?'Edit Advertisement':'Add Advertisement'}</h2>
+
+<div class="formgrid">
+
+<div class="field full">
+<label>Advertisement Title</label>
+<input id="aTitle" value="${esc(a.title)}">
+</div>
+
+<div class="field full">
+<label>Description</label>
+<textarea id="aText" rows="5">${esc(a.text)}</textarea>
+</div>
+
+<div class="field full">
+<label>Upload Advertisement Image</label>
+
+<input id="aImage"
+type="file"
+accept="image/*"
+onchange="previewImage(this,'adPreview')">
+
+</div>
+
+<div class="field full">
+
+${
+a.image
+?
+`<img id="adPreview"
+src="${a.image}"
+style="width:100%;max-height:220px;object-fit:cover;border-radius:16px">`
+:
+`<div id="adPreview"
+style="height:120px;border-radius:16px;background:#e8f3f5;display:grid;place-items:center">
+Image preview
+</div>`
+}
+
+</div>
+
+</div>
+
+<br>
+
+<button class="btn primary"
+onclick="saveAd('${id}')">
+Save Advertisement
+</button>
+
+<button class="btn ghost"
+onclick="closeModal('adModal')">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+`);
+
+}
+
+function saveAd(id){
+
+const saveIt=image=>{
+
+const item={
+id:id||'ad-'+Date.now(),
+title:document.getElementById('aTitle').value.trim(),
+text:document.getElementById('aText').value.trim(),
+image:image||''
+};
+
+if(!item.title){
+
+toast('Advertisement title is required');
+return;
+
+}
+
+if(id){
+
+const i=db.ads.findIndex(x=>x.id===id);
+
+db.ads[i]={
+...db.ads[i],
+...item,
+image:image||db.ads[i].image
+};
+
+}else{
+
+db.ads.push(item);
+
+}
+
+save();
+
+closeModal('adModal');
+
+renderAdsAdmin(document.getElementById('adminContent'));
+
+toast('Advertisement saved');
+
+};
+
+const file=document.getElementById('aImage').files[0];
+
+if(file){
+
+readImage(file,saveIt);
+
+}else{
+
+saveIt(
+id?
+(db.ads.find(x=>x.id===id)||{}).image:''
+);
+
+}
+
+}
+
+function deleteAd(id){
+
+if(!confirm('Delete this advertisement?'))return;
+
+db.ads=db.ads.filter(x=>x.id!==id);
+
+save();
+
+renderAdsAdmin(document.getElementById('adminContent'));
+
+toast('Advertisement deleted');
+
+}
+
+
+/* =========================
+HOSPITAL SETTINGS
+========================= */
+
+function renderSettingsAdmin(c){
+
+const s=db.settings;
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="kicker">Hospital profile</div>
+
+<h2>Hospital Details</h2>
+
+<div class="formgrid">
+
+<div class="field full">
+
+<label>Hospital Name</label>
+
+<input id="setName"
+value="${esc(s.name)}">
+
+</div>
+
+<div class="field">
+
+<label>Short Name</label>
+
+<input id="setShort"
+value="${esc(s.short)}">
+
+</div>
+
+<div class="field">
+
+<label>Phone</label>
+
+<input id="setPhone"
+type="tel"
+value="${esc(s.phone)}">
+
+</div>
+
+<div class="field">
+
+<label>Email</label>
+
+<input id="setEmail"
+type="email"
+value="${esc(s.email)}">
+
+</div>
+
+<div class="field">
+
+<label>Opening Hours</label>
+
+<input id="setHours"
+value="${esc(s.hours)}">
+
+</div>
+
+<div class="field full">
+
+<label>Address</label>
+
+<textarea id="setAddress" rows="3">${esc(s.address)}</textarea>
+
+</div>
+
+<div class="field full">
+
+<label>Website Tagline</label>
+
+<input id="setTagline"
+value="${esc(s.tagline)}">
+
+</div>
+
+<div class="field full">
+
+<label>Hospital Description</label>
+
+<textarea id="setDescription"
+rows="5">${esc(s.description)}</textarea>
+
+</div>
+
+</div>
+
+<br>
+
+<button class="btn primary"
+onclick="saveSettings()">
+Save Hospital Details
+</button>
+
+</div>
+
+`;
+
+}
+
+function saveSettings(){
+
+db.settings.name=document.getElementById('setName').value.trim();
+
+db.settings.short=document.getElementById('setShort').value.trim();
+
+db.settings.phone=document.getElementById('setPhone').value.trim();
+
+db.settings.email=document.getElementById('setEmail').value.trim();
+
+db.settings.hours=document.getElementById('setHours').value.trim();
+
+db.settings.address=document.getElementById('setAddress').value.trim();
+
+db.settings.tagline=document.getElementById('setTagline').value.trim();
+
+db.settings.description=document.getElementById('setDescription').value.trim();
+
+save();
+
+renderPublic();
+
+toast('Hospital details updated');
+
+}
+
+
+/* =========================
+BACKUP / RESTORE
+========================= */
+
+function renderBackupAdmin(c){
+
+c.innerHTML=`
+
+<div class="panel">
+
+<div class="kicker">Data management</div>
+
+<h2>Backup & Restore</h2>
+
+<p class="muted">
+Download your doctors, services, news, advertisements
+and hospital settings as a backup file.
+</p>
+
+<div class="actions">
+
+<button class="btn primary"
+onclick="downloadBackup()">
+Download Backup
+</button>
+
+<label class="btn ghost">
+
+Restore Backup
+
+<input
+type="file"
+accept=".json"
+style="display:none"
+onchange="restoreBackup(this)">
+
+</label>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>Admin PIN</h3>
+
+<p class="muted">
+Current admin access code is stored locally in this browser.
+</p>
+
+<button class="btn ghost"
+onclick="changePin()">
+Change Admin PIN
+</button>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>Important</h3>
+
+<p class="muted">
+This website currently stores admin data in browser
+localStorage. If you clear browser data or change device,
+the data will not automatically move to another device.
+Use Backup & Restore to transfer it.
+</p>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+function downloadBackup(){
+
+const blob=new Blob(
+[JSON.stringify(db,null,2)],
+{type:'application/json'}
+);
+
+const a=document.createElement('a');
+
+a.href=URL.createObjectURL(blob);
+
+a.download='maa-vashno-hospital-backup.json';
+
+a.click();
+
+URL.revokeObjectURL(a.href);
+
+toast('Backup downloaded');
+
+}
+
+function restoreBackup(input){
+
+const file=input.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=()=>{
+
+try{
+
+const data=JSON.parse(reader.result);
+
+if(!data.settings||!data.doctors){
+
+throw new Error();
+
+}
+
+db=merge(DEFAULT,data);
+
+save();
+
+renderPublic();
+
+renderDashboard();
+
+toast('Backup restored');
+
+}catch(e){
+
+toast('Invalid backup file');
+
+}
+
+};
+
+reader.readAsText(file);
+
+}
+
+function changePin(){
+
+const old=prompt('Enter current admin PIN:');
+
+if(old!==db.adminPin){
+
+toast('Incorrect current PIN');
+
+return;
+
+}
+
+const p=prompt('Enter new admin PIN:');
+
+if(!p||p.length<4){
+
+toast('PIN must contain at least 4 characters');
+
+return;
+
+}
+
+db.adminPin=p;
+
+save();
+
+toast('Admin PIN changed');
+
+}
+
+
+/* =========================
+IMAGE HELPERS
+========================= */
+
+function readImage(file,callback){
+
+if(file.size>5*1024*1024){
+
+toast('Image should be below 5 MB');
+
+return;
+
+}
+
+const reader=new FileReader();
+
+reader.onload=e=>callback(e.target.result);
+
+reader.readAsDataURL(file);
+
+}
+
+function previewImage(input,target){
+
+const file=input.files[0];
+
+if(!file)return;
+
+readImage(file,url=>{
+
+const el=document.getElementById(target);
+
+if(el){
+
+if(el.tagName==='IMG'){
+
+el.src=url;
+
+}else{
+
+el.innerHTML=
+`<img
+src="${url}"
+style="width:100%;height:100%;object-fit:cover;border-radius:16px">`;
+
+}
+
+}
+
+});
+
+}
+
+
+/* =========================
+MODAL
+========================= */
+
+function closeModal(id){
+
+const el=document.getElementById(id);
+
+if(el)el.remove();
+
+}
+
+
+/* =========================
+START
+========================= */
+
+renderPublic();
+
+</script>
+
+</body>
+</html>
+}
